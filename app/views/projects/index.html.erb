@@ -1,0 +1,10 @@
+<h1>Projects</h1>
+<ul>
+<% @projects.each do |prj| %>
+	<li><%= prj.name %>
+	<% if prj.description != nil %>
+		- <%= prj.description %>
+	<% end %>
+	</li>
+<% end %>
+</ul>
