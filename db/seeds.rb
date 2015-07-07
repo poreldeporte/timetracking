@@ -10,7 +10,7 @@ if Project.find_by(name: "Wendys") == nil
 	Project.create(name: "Wendys", description: "Top Frostys")
 end
 if Project.find_by(name: "McDonalds") == nil
-	Project.create(name: "McDonalds", description: "Im Lovin It")
+	Project.create(name: "McDonalds", description: "Im Loving It")
 end 
 if Project.find_by(name: "Chicken Kitchen") == nil
 	Project.create(name: "Chicken Kitchen", description: "Healthy Fast Food")
