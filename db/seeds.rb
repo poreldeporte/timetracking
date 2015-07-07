@@ -25,3 +25,19 @@ if Project.find_by(name: "Shake Shack") == nil
 	Project.create(name: "Shake Shack")
 end 
 
+prj = Project.create(name: "Excused", description: "Dont fail again", estimate: "$3000")
+entr = Entry.new(hours: 1, minutes: 32, date: Time.now, comment: "made home page")
+entr.project = prj
+entr.save
+
+entr = Entry.new(hours: 4, minutes: 12, date: Time.now, comment: "added skeleton for site")
+entr.project = prj
+entr.save
+
+entr = Entry.new(hours: 0, minutes: 45, date: Time.now, comment: "added 3 excuses")
+entr.project = prj
+entr.save
+
+entr = Entry.new(hours: 9, minutes: 52, date: Time.now, comment: "finished!")
+entr.project = prj
+entr.save

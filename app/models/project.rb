@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+	has_many :entries
 	def self.clean_new
 		return self.where("created_at > ?", Date.current - 1.week).destroy_all
 	end 
