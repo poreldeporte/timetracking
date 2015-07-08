@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get '/projects/:id' => 'projects#show'
 
   get '/projects/:project_id/entries' => 'entries#index'
+
+  get '/projects/:project_id/entries/new' => 'entries#new'
+
+  post '/projects/:project_id/entries' => 'entries#create', :as => 'project_entries'
+
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

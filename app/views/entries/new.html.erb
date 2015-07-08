@@ -1,0 +1,19 @@
+<h1>New Entry for <%= @project.name %> </h1>
+
+<%= form_for([@project, @entry]) do |frm| %>
+	<div class="form-group">
+		<%= frm.label(:hours) %>
+		<%= frm.text_field(:hours, :class => "form-control") %>
+		<br>
+		<%= frm.label(:minutes) %>
+		<%= frm.text_field(:minutes, :class => "form-control") %>
+		<br>	
+		<%= frm.label(:date) %>
+		<%= frm.date_field(:date, :class => "form-control") %>
+		<br>	
+		<%= frm.label(:comment) %>
+		<%= frm.text_field(:comment, :class => "form-control") %>
+	</div>	
+	<br>
+	<button type="submit">Create New Entry</button>
+<% end %>
