@@ -13,7 +13,17 @@
 		<br>	
 		<%= frm.label(:comment) %>
 		<%= frm.text_field(:comment, :class => "form-control") %>
+		<br>
 	</div>	
 	<br>
 	<button type="submit">Create New Entry</button>
+<% end %>
+
+<% if @entry.errors.any? %>
+	<h2>There appears to be the following error(s):</h2>
+	<ul>
+		<% @entry.errors.full_messages.each do |err| %>
+			<li><%= err %></li>
+		<% end %>
+	</ul>
 <% end %>
