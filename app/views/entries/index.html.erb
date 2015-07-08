@@ -1,0 +1,17 @@
+<h1>Entry List</h1>
+
+<h2>Project: <%= @project.name %></h2>
+
+<% if @project.entries != [] %>
+	<% @project.entries.each do |entr| %>
+		<strong>Time:</strong><%= entr.hours %> hour
+		<%= entr.minutes %> minutes
+		<br>
+		<strong>Comment:</strong><%= entr.comment %>
+		<br>
+		<strong>Date:</strong><%= entr.date %>	
+		<br><br>
+	<% end %>
+<% else %>
+	<h3>You Made No Entries for This Project!</h3>
+<% end %>
