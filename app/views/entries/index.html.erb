@@ -1,5 +1,8 @@
+<br>
+<%= flash_message %>
+
 <div style="text-align:center">
-	<h1>Entry List</h1>
+	<h1>ENTRY LIST</h1>
 	<h2>Project: <strong><%= @project.name %></strong></h2>
 </div>
 
@@ -12,7 +15,9 @@
 		<br>
 		<strong>Date:</strong><%= entr.date %>	
 		<br>
+		<!-- Edit Button -->
 		<a href=<%= edit_project_entry_path(@project, entr) %> class="btn btn-warning">Edit</a>
+		<!-- Delete Button -->
 		<%= link_to('Delete', project_entry_path(@project, entr), :method => :delete, :class => 'btn btn-danger', :data => {confirm: 'Are you sure?'}) %>
 		<br><br>
 	<% end %>

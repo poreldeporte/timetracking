@@ -15,8 +15,10 @@ class EntriesController < ApplicationController
 		@project = Project.find(params[:project_id])
 		@entry = @project.entries.new(entry_params)
 		if @entry.save
+			flash[:notice] = "Created Succesfully!"
 			redirect_to(project_entries_path)
 		else
+			flash[:alert] = "Entry was not Successful!"
 			render('new')
 		end
 	end 
@@ -31,8 +33,10 @@ class EntriesController < ApplicationController
 		@entry = @project.entries.find(params[:id])
 
 		if @entry.update_attributes(entry_params)
+			flash[:notice] = "Updated Succesfully!"
 			redirect_to(project_entries_path)
 		else
+			flash[:alert] = "Update was not Successful!"
 			render('edit')
 		end
 	end 
@@ -41,8 +45,10 @@ class EntriesController < ApplicationController
 		@entry = @project.entries.find(params[:id])
 
 		if @entry.destroy
+			flash[:notice] = "Deleted Succesfully!"
 			redirect_to(project_entries_path)
 		else
+			flash[:alert] = "Delete was not Successful!"
 			render('index')
 		end
 
