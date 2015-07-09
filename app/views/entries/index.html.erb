@@ -1,6 +1,7 @@
-<h1>Entry List</h1>
-
-<h2>Project: <%= @project.name %></h2>
+<div style="text-align:center">
+	<h1>Entry List</h1>
+	<h2>Project: <strong><%= @project.name %></strong></h2>
+</div>
 
 <% if @project.entries != [] %>
 	<% @project.entries.each do |entr| %>
@@ -10,10 +11,22 @@
 		<strong>Comment:</strong><%= entr.comment %>
 		<br>
 		<strong>Date:</strong><%= entr.date %>	
+		<br>
+		<a href=<%= edit_project_entry_path(@project, entr) %> class="btn btn-warning">Edit</a>
+		<%= link_to('Delete', project_entry_path(@project, entr), :method => :delete, :class => 'btn btn-danger', :data => {confirm: 'Are you sure?'}) %>
 		<br><br>
 	<% end %>
 <% else %>
 	<h3>You Made No Entries for This Project!</h3>
 <% end %>
 
+<span class="total-hours">
 <strong>Total hours worked:</strong> <%= @hours %> hours
+</span>
+
+<br>
+<div style="text-align:center">
+	<a href=<%= new_project_entry_path %> class="btn btn-primary">Add a new entry</a>
+	<a href=<%= projects_path %> class="btn btn-primary">Return to project list</a>
+</div>
+<br>

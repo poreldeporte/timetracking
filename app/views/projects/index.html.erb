@@ -1,10 +1,15 @@
-<h1>Projects</h1>
+<div style="text-align:center">
+	<h1>Projects</h1>
+</div>
 <ul>
 <% @projects.each do |prj| %>
-	<li><%= prj.name %>
+	<li>
+		<a href=<%= project_entries_path(prj)%>>
+		<strong><%= prj.name %></strong> </a>
 	<% if prj.description != nil %>
 		- <%= prj.description %>
 	<% end %>
 	</li>
 <% end %>
 </ul>
+<br>

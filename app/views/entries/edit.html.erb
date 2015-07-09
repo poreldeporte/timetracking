@@ -1,4 +1,4 @@
-<h1>New Entry for <%= @project.name %> </h1>
+<h1>Edit Entry <%= @entry.id %> for <%= @project.name %> </h1>
 
 <%= form_for([@project, @entry]) do |frm| %>
 	<div class="form-group">
@@ -16,8 +16,10 @@
 		<br>
 	</div>	
 	<br>
-	<button type="submit" class="btn btn-danger">Create New Entry</button>
-	<a href=<%= projects_path %> class="btn btn-danger">Return to project list</a>
+	<div style="text-align:center">
+		<button type="submit" class="btn btn-danger">Update Entry</button>
+		<a href=<%= projects_path %> class="btn btn-danger">Return to project list</a>
+	</div>
 <% end %>
 
 <% if @entry.errors.any? %>
