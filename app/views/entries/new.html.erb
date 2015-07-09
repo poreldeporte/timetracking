@@ -1,35 +1,3 @@
-<br>
-<%= flash_message %>
-
 <div style="text-align:center"><h1>NEW ENTRY <br> for <strong><%= @project.name %></strong> </h1></div
 >
-
-<%= form_for([@project, @entry]) do |frm| %>
-	<div class="form-group">
-		<%= frm.label(:hours) %>
-		<%= frm.text_field(:hours, :class => "form-control") %>
-		<br>
-		<%= frm.label(:minutes) %>
-		<%= frm.text_field(:minutes, :class => "form-control") %>
-		<br>	
-		<%= frm.label(:date) %>
-		<%= frm.date_field(:date, :class => "form-control") %>
-		<br>	
-		<%= frm.label(:comment) %>
-		<%= frm.text_field(:comment, :class => "form-control") %>
-		<br>
-	</div>	
-	<br>
-	<button type="submit" class="btn btn-danger">Create New Entry</button>
-	<a href=<%= projects_path %> class="btn btn-danger">Return to project list</a>
-<% end %>
-
-<% if @entry.errors.any? %>
-	<h2>There appears to be the following <span style="color:red">error(s)</span>:</h2>
-	<ul>
-		<% @entry.errors.full_messages.each do |err| %>
-			<li><%= err %></li>
-		<% end %>
-	</ul>
-<% end %>
-<br>
+<%= render 'form' %>
